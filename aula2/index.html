@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <botao-clique mensagem="eva lohaneee"></botao-clique>
+
+        <h1>Soma: {{resultadoSoma}}</h1>
+        <input type="number" v-model="numero" @keyup.space.enter="somar()"></input>
+
+        <form @submit.prevent="alertaMensagem()">
+            <input type="text">
+        </form>
+
+        <div v-for="item in itens">
+            <p>{{item.nome}} - {{item.preco}}</p>
+        </div>
+
+        <button @click="valorNumero -= 1">-</button>
+        <h1>{{valorNumero}}</h1>
+        <button @click="valorNumero += 1">+</button>
+    </div>
+</body>
+</html>
